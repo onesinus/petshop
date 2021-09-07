@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-j$b1t)kps(@0@pu!&yv%4k^ie00&a3$@^wsen@uag2$@$0e5zm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -49,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'petshop.urls'
+ROOT_URLCONF = '_configuration.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'petshop.wsgi.application'
+WSGI_APPLICATION = '_configuration.wsgi.application'
 
 
 # Database
