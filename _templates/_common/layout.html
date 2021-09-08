@@ -6,15 +6,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Petshop{% endblock %}</title>
-        {% include "load-css.html" %}
+        {% include "_common/load-css.html" %}
     </head>
     <body>
-        {% include "header.html" %}
+        {% include "_common/header.html" %}
         <main style="margin-top: 58px">
             {% block content %}{% endblock %}
         </main>
-        {% include "load-js.html" %}
-        {% include "footer.html" %}
+        {% include "_common/load-js.html" %}
+        {% include "_common/footer.html" %}
     </body>
 </html>
 
