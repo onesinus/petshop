@@ -2,21 +2,21 @@
 <!--Main Navigation-->
 <header>
     <!-- Sidenav -->
-    <div id="sidenav-1" class="sidenav" role="navigation" data-hidden="false" data-accordion="true">
+    <div id="sidenav-1" class="sidenav" role="navigation" data-hidden="true" data-accordion="true">
         <a class="ripple d-flex justify-content-center py-4" href="#!" data-ripple-color="primary">
             <img src="{% static 'images/logo.png' %}" alt="Company Logo" draggable="false" />
         </a>
 
         <ul class="sidenav-menu">
             <li class="sidenav-item">
-                <a class="sidenav-link" href="">
+                <a class="sidenav-link" href="{% url 'home' %}">
                     <i class="fas fa-home pr-3"></i><span>Home</span></a>
             </li>
             <li class="sidenav-item">
                 <a class="sidenav-link"><i class="fas fa-cogs pr-3"></i><span>Master Data</span></a>
                 <ul class="sidenav-collapse">
                     <li class="sidenav-item">
-                        <a class="sidenav-link">Customer</a>
+                        <a href="{% url 'user-list' %}" class="sidenav-link">Customer</a>
                     </li>
                     <li class="sidenav-item">
                         <a class="sidenav-link">Product</a>
