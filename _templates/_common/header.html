@@ -16,7 +16,7 @@
                 <a class="sidenav-link"><i class="fas fa-cogs pr-3"></i><span>Master Data</span></a>
                 <ul class="sidenav-collapse">
                     <li class="sidenav-item">
-                        <a href="{% url 'user-list' %}" class="sidenav-link">Customer</a>
+                        <a href="{% url 'customer-list' %}" class="sidenav-link">Customer</a>
                     </li>
                     <li class="sidenav-item">
                         <a class="sidenav-link">Product</a>
@@ -93,7 +93,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
                         id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle"
+                        <img src="{% static 'images/user-icon.jpg' %}" class="rounded-circle"
                             height="22" alt="" loading="lazy" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
