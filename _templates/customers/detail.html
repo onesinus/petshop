@@ -1,6 +1,32 @@
 {% extends "_common/layout.html" %}
-{% block title %} Detail User {% endblock %}
+{% block title %} Detail Customer {% endblock %}
 
 {% block content %}
-    Detail User Page
+    <h2 class="text-center">Detail Customer</h2>
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-highlight">
+            <a href="{% url 'customer-list' %}" class="btn btn-secondary">Back</a>
+            <a href="{% url 'customer-edit' pk=object.id %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'customer-delete' pk=object.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <td>{{ object.id }}</td>
+        </tr>
+
+        <tr>
+            <th>Name</th>
+            <td>{{ object.name }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ object.email }}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{ object.address }}</td>
+        </tr>
+    </table>
 {% endblock %}

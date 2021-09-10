@@ -1,0 +1,23 @@
+{% extends "_common/layout.html" %}
+{% block title %} Delete Customer {% endblock %}
+{% block content %}
+    <div class="d-flex justify-content-center">
+        <form method="POST">
+            {% csrf_token %}
+            <h2>Are you sure you want to delete "{{ object.name }}"?</h2>
+            <div class="d-flex justify-content-center">
+                <input 
+                    class="btn btn-success"
+                    type="submit" 
+                    value="Yes"
+                >
+                <a 
+                    class="btn btn-secondary ml-2"
+                    href="{% url 'customer-detail' pk=object.id %}"
+                >
+                    No
+                </a>
+            </div>
+        </form>    
+    </div>
+{% endblock %}

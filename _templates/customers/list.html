@@ -1,20 +1,36 @@
 {% extends "_common/layout.html" %}
-{% block title %} List User {% endblock %}
+{% block title %} List Customer {% endblock %}
 
 {% block content %}
-    <h2>List Customer</h2>
-    <table class="dt table table-hover">
+    <h2 class="text-center">List Customer</h2>
+    <a 
+        href="{% url 'customer-create' %}"
+        class="btn btn-primary"
+    >
+        Add New Data
+    </a>
+    <table class="dt table">
         <thead>
             <tr>
+                <th>#</th>
                 <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td></td>
-            </tr>
+            {% for object in object_list %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ object.name }}</td>
+                    <td>{{ object.email }}</td>
+                    <td>{{ object.address }}</td>
+                    <td>
+                        <a href="{% url 'customer-detail' pk=object.id %}" class="btn btn-primary">Detail</a>
+                    </td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

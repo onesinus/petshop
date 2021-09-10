@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('.dt').DataTable({
         "lengthChange": false,
-        "pageLength": 7
+        "pageLength": 5
     });
 } );

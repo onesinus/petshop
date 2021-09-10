@@ -1,6 +1,15 @@
 {% extends "_common/layout.html" %}
-{% block title %} Form User {% endblock %}
+{% block title %} Form Customer {% endblock %}
 
 {% block content %}
-    User Form Page
+    <h2 class="text-center">Customer Form Page</h2>
+
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-highlight">
+            <a href="{% url 'customer-list' %}" class="btn btn-success">Customer List</a>
+            {% if object.id %}
+                <a href="{% url 'customer-detail' pk=object.id %}" class="btn btn-secondary">Customer Detail</a>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}
