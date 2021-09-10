@@ -1,0 +1,36 @@
+{% extends "_common/layout.html" %}
+{% block title %} List Product {% endblock %}
+
+{% block content %}
+    <h2 class="text-center">List Product</h2>
+    <a 
+        href="{% url 'product-create' %}"
+        class="btn btn-primary"
+    >
+        Add New Data
+    </a>
+    <table class="dt table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Sales Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ object.code }}</td>
+                    <td>{{ object.name }}</td>
+                    <td>{{ object.sales_price }}</td>
+                    <td>
+                        <a href="{% url 'product-detail' pk=object.id %}" class="btn btn-primary">Detail</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

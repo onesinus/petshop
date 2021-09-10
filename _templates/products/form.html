@@ -1,0 +1,33 @@
+{% extends "_common/layout.html" %}
+{% block title %} Form Product {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h2 class="text-center">Product Form Page</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-6">
+                {{ form.code|as_crispy_field }}
+            </div>
+            <div class="col-6">
+                {{ form.name|as_crispy_field }}
+            </div>
+            <div class="col-12">
+                {{ form.sales_price|as_crispy_field }}
+            </div>
+        </div>
+        <div>
+            <div class="pt-2 bd-highlight">
+                <button type="submit" class="btn btn-success">Save</button>
+
+                {% if object.id %}
+                    <a href="{% url 'product-detail' pk=object.id %}" class="btn btn-secondary">Back</a>
+                {% else %}
+                    <a href="{% url 'product-list' %}" class="btn btn-secondary">Back</a>
+                {% endif %}
+            </div>    
+        </div>
+    </form>    
+{% endblock %}
