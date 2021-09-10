@@ -12,6 +12,17 @@
     <body>
         {% include "_common/header.html" %}
         <main>
+            {% if messages %}
+                {% for message in messages %}
+                    <div 
+                        class="alert alert-{{ message.tags }} alert-dismissible"
+                        role="alert"
+                    >
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>{{ message.tags }}!</strong> {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             {% block content %}{% endblock %}
         </main>
         {% include "_common/load-js.html" %}

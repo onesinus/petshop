@@ -1,6 +1,7 @@
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 from customers.models import Customer
 from customers.forms import CustomerForm
@@ -27,6 +28,8 @@ class CustomerCreate(CreateView):
         object = form.save(commit=False)
         object.created_by_id = self.request.user.id
         object.save()
+
+        messages.success(self.request, 'Customer has been added.')
         return super(CustomerCreate, self).form_valid(form)
 
 
@@ -40,6 +43,8 @@ class CustomerEdit(UpdateView):
         object = form.save(commit=False)
         object.updated_by_id = self.request.user.id
         object.save()
+
+        messages.success(self.request, 'Customer has been updated.')
         return super(CustomerEdit, self).form_valid(form)
 
 
@@ -47,4 +52,8 @@ class CustomerDelete(DeleteView):
     model = Customer
     template_name = "customers/delete.html"
     success_url = reverse_lazy('customer-list')
+    success_message = "Customer has been deleted"
 
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(CustomerDelete, self).delete(request, *args, **kwargs)
