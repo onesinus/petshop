@@ -1,0 +1,36 @@
+{% extends "_common/layout.html" %}
+{% block title %} Detail Customer Discount {% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Detail Customer Discount</h2>
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-highlight">
+            <a href="{% url 'customer-discount-list' %}" class="btn btn-secondary">Back</a>
+            <a href="{% url 'customer-discount-edit' pk=object.id %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'customer-discount-delete' pk=object.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <td>{{ object.id }}</td>
+        </tr>
+
+        <tr>
+            <th>Customer</th>
+            <td>{{ object.customer }}</td>
+        </tr>
+        <tr>
+            <th>Product</th>
+            <td>{{ object.product }}</td>
+        </tr>
+        <tr>
+            <th>Is Percentage?</th>
+            <td>{{ object.is_percentage }}</td>
+        </tr>
+        <tr>
+            <th>Discount</th>
+            <td>{{ object.discount }}</td>
+        </tr>
+    </table>
+{% endblock %}

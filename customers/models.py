@@ -11,12 +11,17 @@ class Customer(Audit):
     class Meta:
         db_table = 'mst_customer'
 
+    def __str__(self):
+        return self.name
 
 class CustomerDiscount(Audit):
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
     product = models.ForeignKey(Product, on_delete=models.PROTECT)
+    is_percentage = models.BooleanField(default=False)
     discount = models.DecimalField(max_digits=12, decimal_places=2)
 
     class Meta:
         db_table = 'mst_customer_discount'
     
+    def __str__(self):
+        return f"{self.customer.name} {self.discount} "

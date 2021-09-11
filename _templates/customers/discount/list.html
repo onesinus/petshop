@@ -1,0 +1,38 @@
+{% extends "_common/layout.html" %}
+{% block title %} List Customer Discount {% endblock %}
+
+{% block content %}
+    <h2 class="text-center">List Customer Discount</h2>
+    <a 
+        href="{% url 'customer-discount-create' %}"
+        class="btn btn-primary"
+    >
+        Add New Data
+    </a>
+    <table class="dt table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Is Percentage?</th>
+                <th>Discount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ object.customer }}</td>
+                    <td>{{ object.product }}</td>
+                    <td>{{ object.is_percentage }}</td>
+                    <td>{{ object.discount }}</td>
+                    <td>
+                        <a href="{% url 'customer-discount-detail' pk=object.id %}" class="btn btn-primary">Detail</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

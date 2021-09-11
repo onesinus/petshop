@@ -6,23 +6,23 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 
 from customers.models import Customer
-from customers.forms import CustomerForm
+from customers.forms.customer import CustomerForm
 
 
 class CustomerList(LoginRequiredMixin, ListView):
     model = Customer
-    template_name = "customers/list.html"
+    template_name = "customers/customer/list.html"
 
 
 class CustomerDetail(LoginRequiredMixin, UpdateView):
     model = Customer
-    template_name = "customers/detail.html"
+    template_name = "customers/customer/detail.html"
     fields = [ 'id', 'name', 'email', 'address']
 
 
 class CustomerCreate(LoginRequiredMixin, CreateView):
     model = Customer
-    template_name = "customers/form.html"
+    template_name = "customers/customer/form.html"
     form_class = CustomerForm
     success_url = reverse_lazy('customer-list')
 
@@ -37,7 +37,7 @@ class CustomerCreate(LoginRequiredMixin, CreateView):
 
 class CustomerEdit(LoginRequiredMixin, UpdateView):
     model = Customer
-    template_name = "customers/form.html"
+    template_name = "customers/customer/form.html"
     form_class = CustomerForm
     success_url = reverse_lazy('customer-list')
 
@@ -52,7 +52,7 @@ class CustomerEdit(LoginRequiredMixin, UpdateView):
 
 class CustomerDelete(LoginRequiredMixin, DeleteView):
     model = Customer
-    template_name = "customers/delete.html"
+    template_name = "customers/customer/delete.html"
     success_url = reverse_lazy('customer-list')
     success_message = "Customer has been deleted"
 

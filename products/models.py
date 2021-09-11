@@ -10,6 +10,8 @@ class Product(Audit):
     class Meta:
         db_table = 'mst_product'
 
+    def __str__(self):
+        return self.name
 
 class ProductDetail(Audit):
     product = models.ForeignKey(Product, on_delete=models.PROTECT)
@@ -19,3 +21,6 @@ class ProductDetail(Audit):
 
     class Meta:
         db_table = 'mst_product_detail'
+
+    def __str__(self):
+        return f"{self.product.name} {self.qty}"
