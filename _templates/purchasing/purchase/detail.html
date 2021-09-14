@@ -1,0 +1,36 @@
+{% extends "_common/layout.html" %}
+{% block title %} Detail Customer {% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Detail Customer</h2>
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-highlight">
+            <a href="{% url 'purchase-list' %}" class="btn btn-secondary">Back</a>
+            <a href="{% url 'purchase-edit' pk=object.id %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'purchase-delete' pk=object.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <td>{{ object.id }}</td>
+        </tr>
+
+        <tr>
+            <th>Product</th>
+            <td>{{ object.product }}</td>
+        </tr>
+        <tr>
+            <th>Qty</th>
+            <td>{{ object.qty }}</td>
+        </tr>
+        <tr>
+            <th>Capital Price</th>
+            <td>{{ object.capital_price }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ object.status }}</td>
+        </tr>
+    </table>
+{% endblock %}

@@ -13,5 +13,4 @@ urlpatterns = [
     path('discount/create', customer_discount.CustomerDiscountCreate.as_view(), name='customer-discount-create'),
     path('discount/edit/<int:pk>', customer_discount.CustomerDiscountEdit.as_view(), name='customer-discount-edit'),
     path('discount/delete/<int:pk>', customer_discount.CustomerDiscountDelete.as_view(), name='customer-discount-delete'),
-
 ]
