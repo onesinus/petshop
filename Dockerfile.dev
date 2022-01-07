@@ -1,0 +1,12 @@
+FROM python:3.7
+ENV PYTHONUNBUFFERED=1
+
+COPY requirements.txt /
+
+RUN pip3 install --upgrade pip
+RUN pip3 install -U -r requirements.txt
+
+RUN mkdir /petshop
+WORKDIR /petshop
+
+ADD . /petshop/

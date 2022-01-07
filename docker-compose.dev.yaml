@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  petshop:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: petshop
+    restart: always
+    command: bash -c "python manage.py runserver 0.0.0.0:7321"
+    volumes:
+      - .:/petshop
+    ports:
+      - "7321:7321"
