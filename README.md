@@ -40,7 +40,7 @@ if you want to run this application using virtual environment make sure you've *
     ```console
         python manage.py createsuperuser
     ```
-2. **Using Docker Composer**<br/>
+2. **Using Docker Compose**<br/>
 if you want to run this application using docker, make sure you've installed docker and docker compose (well tested in Docker version **20.10.11** & docker-compose version **1.21.2**)
 
     ```console
