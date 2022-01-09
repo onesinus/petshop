@@ -2,7 +2,8 @@
 
 ### Options for running the application
 1. **Using Virtual Environment**<br/>
-if you want to run this application using virtual environment make sure you've **python3** and **pip** installed on your operating system
+if you want to run this application using virtual environment make sure you've **python3** and **pip** installed on your operating system<br/>
+    Then create a virtual environment with one of this command (choose one depending on your python alias)
     ```console
         python -m venv venv
     ```
