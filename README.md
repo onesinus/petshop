@@ -17,14 +17,14 @@ if you want to run this application using virtual environment make sure you've *
     ```
     
     Then activate virtual environment
-        If your operating system is linux or MacOs:
-        ```console
-            source venv/bin/activate
-        ```
-        If your operating system is windows
-        ```console
-            venv\Script\activate.bat
-        ```
+    * If your operating system is linux or MacOs:
+    ```console
+        source venv/bin/activate
+    ```
+    * If your operating system is windows
+    ```console
+        venv\Script\activate.bat
+    ```
         
     Install packages
     ``` console
