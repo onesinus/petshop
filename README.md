@@ -15,9 +15,17 @@ if you want to run this application using virtual environment make sure you've *
         py -m venv venv
     ```
     
-    Then activate virtual environment and install packages
+    Then activate virtual environment and install packages.
+    If your operating system is linux or MacOs:
     ```console
-        venv\Script\activate
+        source venv/bin/activate
+    ```
+    If your operating system is windows
+    ```console
+        venv\Script\activate.bat
+    ```
+    Install packages
+    ``` console
         pip install -r requirements.txt
     ```
     
