@@ -46,3 +46,7 @@ if you want to run this application using docker, make sure you've installed doc
     ```console
     docker-compose -f docker-compose.dev.yaml up -d
     ```
+
+
+References:
+https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
