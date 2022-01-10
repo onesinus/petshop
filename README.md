@@ -1,5 +1,10 @@
 ## _Application using Django 3.2.7_
 
+### Deployed Application (for testing purpose) ###
+http://ec2-13-214-161-205.ap-southeast-1.compute.amazonaws.com:7321/
+User login: mekar
+Password: mekar
+
 ### Options for running the application
 1. **Using Virtual Environment**<br/>
 if you want to run this application using virtual environment make sure you've **python3** and **pip** installed on your operating system<br/>
@@ -47,11 +52,6 @@ To create user for login to application
 ```console
     python manage.py createsuperuser
 ```
-
-### This is Deployed URL if you face issue when installing this app ###
-http://ec2-13-214-161-205.ap-southeast-1.compute.amazonaws.com:7321/
-User login: mekar
-Password: mekar
 
 References:
 https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
