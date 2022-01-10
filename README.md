@@ -48,5 +48,10 @@ To create user for login to application
     python manage.py createsuperuser
 ```
 
+### This is Deployed URL if you face issue when installing this app ###
+http://ec2-13-214-161-205.ap-southeast-1.compute.amazonaws.com:7321/
+User login: mekar
+Password: mekar
+
 References:
 https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
