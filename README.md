@@ -1,7 +1,7 @@
 ## _Application using Django 3.2.7_
 
 ### Deployed Application (for testing purpose) ###
-http://ec2-13-214-161-205.ap-southeast-1.compute.amazonaws.com:7321/ <br/>
+http://ec2-3-1-220-190.ap-southeast-1.compute.amazonaws.com:7321/ <br/>
 User login: mekar </br>
 Password: mekar
 
